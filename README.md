@@ -86,45 +86,52 @@ Web-app boilerplate that fits my needs.
 
 
   ```js
-  const webpack = require('webpack');
   const uglify = require('uglifyjs-webpack-plugin'); //++
-  const client = {
-    entry: [
-      './src/client/index.js'
-    ],
-    output: {
-      path: __dirname + '/dist/client',
-      filename: '[name].js',
-    },
-    module: {
-      rules: [
-        { test: /\.(js)$/, use: 'babel-loader', exclude: /node_modules/ }
-      ]
-    },
-    plugins: [
-      new webpack.DefinePlugin({
-        __isBrowser__: "true"
-      })
-    ],
-    optimization: { //++
-      minimize: true, //++
-      minimizer: [ //++
-        new uglify({ //++
-          parallel: true, //++
-          cache: true, //++
-          uglifyOptions: { //++
-            output: { //++
-              comments: false //++
-            }, //++
-            compress: { //++
-              dead_code: true //++
+  const client = (env, argv) => {
+    return {
+      entry: [
+        './src/client/index.js'
+      ],
+      output: {
+        path: __dirname + '/dist/client',
+        filename: '[name].js',
+      },
+      module: {
+        rules: [
+          { test: /\.(js)$/, use: 'babel-loader', exclude: /node_modules/ }
+        ]
+      },
+      optimization: { //++
+        minimize: true, //++
+        minimizer: [ //++
+          new uglify({ //++
+            parallel: true, //++
+            cache: true, //++
+            uglifyOptions: { //++
+              output: { //++
+                comments: false //++
+              }, //++
+              compress: { //++
+                dead_code: true //++
+              } //++
             } //++
-          } //++
-        }) //++
-      ] //++
-    } //++
-  };  
+          }) //++
+        ] //++
+      } //++
+    };
+  };
   module.exports = [client];
+  ```
+
+
+* Modify `scripts` at `package.json`:
+
+
+  ```
+  "scripts": {
+    "debug": "webpack --mode=development --env.mode=development --watch",
+    "build": "webpack --mode=production --env.mode=production"
+  },
   ```
 
 
@@ -395,3 +402,6 @@ immutable
 
 * https://babeljs.io/docs/plugins/transform-do-expressions/
 * https://babeljs.io/docs/plugins/transform-function-bind/
+
+## Reference Links
+* webpack env vars https://webpack.js.org/guides/environment-variables/
