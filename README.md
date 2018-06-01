@@ -384,7 +384,14 @@ react-loadable
 babel-plugin-syntax-dynamic-import -D
 ```
 
+* https://babeljs.io/docs/plugins/syntax-dynamic-import/
+
 ## Immutable
 ```
 immutable
 ```
+
+## Babel Transforms
+
+* https://babeljs.io/docs/plugins/transform-do-expressions/
+* https://babeljs.io/docs/plugins/transform-function-bind/
