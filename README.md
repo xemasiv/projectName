@@ -106,23 +106,23 @@ Web-app boilerplate that fits my needs.
         __isBrowser__: "true"
       })
     ],
-  	optimization: { //++
-  		minimize: true, //++
-  		minimizer: [ //++
-  			new uglify({ //++
+    optimization: { //++
+      minimize: true, //++
+      minimizer: [ //++
+        new uglify({ //++
           parallel: true, //++
           cache: true, //++
-  				uglifyOptions: { //++
-  					output: { //++
-  						comments: false //++
-  					}, //++
-  					compress: { //++
-  						dead_code: true //++
-  					} //++
-  				} //++
-  			}) //++
-  		] //++
-  	} //++
+          uglifyOptions: { //++
+            output: { //++
+              comments: false //++
+            }, //++
+            compress: { //++
+              dead_code: true //++
+            } //++
+          } //++
+        }) //++
+      ] //++
+    } //++
   };  
   module.exports = [client];
   ```
