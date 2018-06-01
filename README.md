@@ -1,5 +1,5 @@
-# simple-setups
-Simplified project setups.
+# projectName
+Web-app boilerplate that fits my needs.
 
 
 ## Atom Editor Installs (if using Atom)
