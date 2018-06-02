@@ -5,6 +5,9 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 import 'babel-polyfill';
 
+import Button from '@material-ui/core/Button';
+import AlarmIcon from '@material-ui/icons/Alarm';
+
 type Props = { };
 type State = {
   count: number,
@@ -25,7 +28,14 @@ class MyComponent extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>Count: {this.state.count}</div>
+      <div>
+        Count: {this.state.count}
+        <br />
+        <AlarmIcon />
+        <Button variant="raised" color="primary">
+          Hello World
+        </Button>
+      </div>
     );
   }
 }
