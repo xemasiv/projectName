@@ -6,6 +6,7 @@ import express from 'express';
 import cors from 'cors';
 import compression from 'compression';
 import forceSSL from 'express-force-ssl';
+import serialize from 'serialize-javascript';
 
 const app = express();
 app.use(cors());
@@ -15,8 +16,25 @@ app.use(compression({
   memLevel: 9,
 }));
 app.use(forceSSL);
+app.use(express.static('dist/client'));
 app.use('*', (req, res) => {
-  res.status(200).json({ message: 'Hello world!' });
+  const SESSION = {};
+  res.status(200).send(`
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <title>Title</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <base href="/" />
+      </head>
+      <body>
+        <div id="root"></div>
+        <script src="/main.js" defer></script>
+        <script>window.__SESSION__ = ${serialize(SESSION)}</script>
+      </body>
+    </html>
+  `);
 });
 
 const readAsUTF8 = path => fs.readFileSync(path, 'utf8');
