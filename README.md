@@ -375,9 +375,8 @@ joi
 
 ## React
 ```
-react
-react-dom
-babel-preset-react
+yarn add react react-dom
+yarn add babel-preset-react babel-plugin-transform-class-properties -D
 ```
 
 ## React Router
