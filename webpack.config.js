@@ -9,7 +9,7 @@ const client = (env, argv) => {
   return {
     entry: [
       'whatwg-fetch',
-      './src/client/index.js',
+      './src/client/index.jsx',
     ],
     output: {
       path: `${__dirname}/dist/client`,
@@ -17,7 +17,7 @@ const client = (env, argv) => {
     },
     module: {
       rules: [
-        { test: /\.(js)$/, use: 'babel-loader', exclude: /node_modules/ },
+        { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
       ],
     },
     optimization: {

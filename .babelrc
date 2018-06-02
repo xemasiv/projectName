@@ -1,4 +1,5 @@
 {
+
   "presets": [
     "flow",
     ["airbnb", {
@@ -12,6 +13,12 @@
       "modules": false,
       "useBuiltIns": true,
       "debug": true
-    }]
+    }],
+    "react"
+  ],
+
+  "plugins": [
+    "transform-class-properties"
   ]
+
 }

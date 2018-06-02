@@ -3,5 +3,9 @@ module.exports = {
   "rules": {
     "strict": 0
   },
-  "extends": "airbnb"
+  "extends": "airbnb",
+  "env": {
+      "browser": true,
+      "node": true
+  }
 };

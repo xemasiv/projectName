@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js run flow
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js run build
 
 PATH: 
   C:\cygwin64\usr\local\bin;C:\cygwin64\bin;C:\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\cmder\vendor\conemu-maximus5;C:\cmder\vendor\conemu-maximus5\ConEmu;C:\Python27;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\sc_tools\cmder;C:\sc_tools\coreutils;C:\sc_tools\curl;C:\sc_tools\git-for-windows;C:\sc_tools\grep;C:\sc_tools\gtools;C:\sc_tools\putty;C:\sc_tools\sysinternals;C:\sc_tools\unzip;C:\sc_tools\winscp;C:\sc_tools\wget;C:\sc_tools\zip;C:\sc_tools\npp;C:\Users\1234\AppData\Roaming\npm;C:\Program Files\Git\cmd;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\sc_tools\openssh64;C:\Users\1234\Projects\laview\node_modules\phantomjs\bin;C:\Users\1234\Projects\laview\node_modules\casperjs\bin;C:\Users\1234\Projects\laview\node_modules\phantomjs;C:\Users\1234\Projects\laview\node_modules\phantomjs\lib\phantom\bin;C:\Users\1234\Projects\laview\phantomjs;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files (x86)\Yarn\bin;C:\Program Files\nodejs;C:\Program Files\Heroku\bin;C:\Users\1234\AppData\Local\atom\bin;C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\v140;C:\Program Files\Genymobile\Genymotion\tools;C:\Users\1234\AppData\Local\Yarn\bin;C:\Users\1234\AppData\Local\hyper\app-2.0.0\resources\bin;C:\Users\1234\AppData\Roaming\npm
@@ -24,14 +24,14 @@ npm manifest:
       "build": "webpack --mode=production --env.mode=production"
     },
     "devDependencies": {
-      "babel-cli": "^6.26.0",
+      "babel-core": "^6.26.3",
       "babel-eslint": "^8.2.3",
       "babel-loader": "^7.1.4",
       "babel-preset-airbnb": "^2.4.0",
       "babel-preset-flow": "^6.23.0",
+      "babel-preset-react": "^6.24.1",
       "eslint": "^4.19.1",
       "eslint-config-airbnb": "^16.1.0",
-      "eslint-plugin-babel": "^5.1.0",
       "eslint-plugin-import": "^2.7.0",
       "eslint-plugin-jsx-a11y": "^6.0.2",
       "eslint-plugin-react": "^7.4.0",
@@ -40,11 +40,13 @@ npm manifest:
       "webpack": "^4.10.2",
       "webpack-cli": "^2.1.4"
     },
-    "sideEffects": false,
     "dependencies": {
       "babel-polyfill": "^6.26.0",
+      "react": "^16.4.0",
+      "react-dom": "^16.4.0",
       "whatwg-fetch": "^2.0.4"
-    }
+    },
+    "sideEffects": false
   }
 
 yarn manifest: 
@@ -364,13 +366,6 @@ Lockfile:
     version "0.3.0"
     resolved "https://registry.yarnpkg.com/any-observable/-/any-observable-0.3.0.tgz#af933475e5806a67d0d7df090dd5e8bef65d119b"
   
-  anymatch@^1.3.0:
-    version "1.3.2"
-    resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-1.3.2.tgz#553dcb8f91e3c889845dfdba34c77721b90b9d7a"
-    dependencies:
-      micromatch "^2.1.5"
-      normalize-path "^2.0.0"
-  
   anymatch@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-2.0.0.tgz#bcb24b4f37934d9aa7ac17b4adaf89e7c76ef2eb"
@@ -511,27 +506,6 @@ Lockfile:
     dependencies:
       ast-types-flow "0.0.7"
   
-  babel-cli@^6.26.0:
-    version "6.26.0"
-    resolved "https://registry.yarnpkg.com/babel-cli/-/babel-cli-6.26.0.tgz#502ab54874d7db88ad00b887a06383ce03d002f1"
-    dependencies:
-      babel-core "^6.26.0"
-      babel-polyfill "^6.26.0"
-      babel-register "^6.26.0"
-      babel-runtime "^6.26.0"
-      commander "^2.11.0"
-      convert-source-map "^1.5.0"
-      fs-readdir-recursive "^1.0.0"
-      glob "^7.1.2"
-      lodash "^4.17.4"
-      output-file-sync "^1.1.2"
-      path-is-absolute "^1.0.1"
-      slash "^1.0.0"
-      source-map "^0.5.6"
-      v8flags "^2.1.1"
-    optionalDependencies:
-      chokidar "^1.6.1"
-  
   babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
     version "6.26.0"
     resolved "https://registry.yarnpkg.com/babel-code-frame/-/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
@@ -540,7 +514,7 @@ Lockfile:
       esutils "^2.0.2"
       js-tokens "^3.0.2"
   
-  babel-core@^6.26.0:
+  babel-core@^6.26.0, babel-core@^6.26.3:
     version "6.26.3"
     resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.26.3.tgz#b2e2f09e342d0f0c88e2f02e067794125e75c207"
     dependencies:
@@ -1530,21 +1504,6 @@ Lockfile:
     version "0.4.2"
     resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.4.2.tgz#b5473b33dc97c424e5d98dc87d55d4d8a29c8bf2"
   
-  chokidar@^1.6.1:
-    version "1.7.0"
-    resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
-    dependencies:
-      anymatch "^1.3.0"
-      async-each "^1.0.0"
-      glob-parent "^2.0.0"
-      inherits "^2.0.1"
-      is-binary-path "^1.0.0"
-      is-glob "^2.0.0"
-      path-is-absolute "^1.0.0"
-      readdirp "^2.0.0"
-    optionalDependencies:
-      fsevents "^1.0.0"
-  
   chokidar@^2.0.2:
     version "2.0.3"
     resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.0.3.tgz#dcbd4f6cbb2a55b4799ba8a840ac527e5f4b1176"
@@ -1746,7 +1705,7 @@ Lockfile:
     version "0.1.0"
     resolved "https://registry.yarnpkg.com/contains-path/-/contains-path-0.1.0.tgz#fe8cf184ff6670b6baef01a9d4861a5cbec4120a"
   
-  convert-source-map@^1.5.0, convert-source-map@^1.5.1:
+  convert-source-map@^1.5.1:
     version "1.5.1"
     resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.5.1.tgz#b8278097b9bc229365de5c62cf5fcaed8b5599e5"
   
@@ -2140,12 +2099,6 @@ Lockfile:
       debug "^2.6.8"
       pkg-dir "^1.0.0"
   
-  eslint-plugin-babel@^5.1.0:
-    version "5.1.0"
-    resolved "https://registry.yarnpkg.com/eslint-plugin-babel/-/eslint-plugin-babel-5.1.0.tgz#9c76e476162041e50b6ba69aa4eae3bdd6a4e1c3"
-    dependencies:
-      eslint-rule-composer "^0.3.0"
-  
   eslint-plugin-import@^2.7.0:
     version "2.12.0"
     resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.12.0.tgz#dad31781292d6664b25317fd049d2e2b2f02205d"
@@ -2185,10 +2138,6 @@ Lockfile:
   eslint-restricted-globals@^0.1.1:
     version "0.1.1"
     resolved "https://registry.yarnpkg.com/eslint-restricted-globals/-/eslint-restricted-globals-0.1.1.tgz#35f0d5cbc64c2e3ed62e93b4b1a7af05ba7ed4d7"
-  
-  eslint-rule-composer@^0.3.0:
-    version "0.3.0"
-    resolved "https://registry.yarnpkg.com/eslint-rule-composer/-/eslint-rule-composer-0.3.0.tgz#79320c927b0c5c0d3d3d2b76c8b4a488f25bbaf9"
   
   eslint-scope@^3.7.1, eslint-scope@~3.7.1:
     version "3.7.1"
@@ -2538,10 +2487,6 @@ Lockfile:
     dependencies:
       minipass "^2.2.1"
   
-  fs-readdir-recursive@^1.0.0:
-    version "1.1.0"
-    resolved "https://registry.yarnpkg.com/fs-readdir-recursive/-/fs-readdir-recursive-1.1.0.tgz#e32fc030a2ccee44a6b5371308da54be0b397d27"
-  
   fs-write-stream-atomic@^1.0.8:
     version "1.0.10"
     resolved "https://registry.yarnpkg.com/fs-write-stream-atomic/-/fs-write-stream-atomic-1.0.10.tgz#b47df53493ef911df75731e70a9ded0189db40c9"
@@ -2555,7 +2500,7 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   
-  fsevents@^1.0.0, fsevents@^1.1.2:
+  fsevents@^1.1.2:
     version "1.2.4"
     resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.2.4.tgz#f41dcb1af2582af3692da36fc55cbd8e1041c426"
     dependencies:
@@ -2740,7 +2685,7 @@ Lockfile:
       url-parse-lax "^3.0.0"
       url-to-options "^1.0.1"
   
-  graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4:
+  graceful-fs@^4.1.11, graceful-fs@^4.1.2:
     version "4.1.11"
     resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
   
@@ -3511,7 +3456,7 @@ Lockfile:
     version "3.2.0"
     resolved "https://registry.yarnpkg.com/long/-/long-3.2.0.tgz#d821b7138ca1cb581c172990ef14db200b5c474b"
   
-  loose-envify@^1.0.0, loose-envify@^1.3.1:
+  loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1:
     version "1.3.1"
     resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
     dependencies:
@@ -3604,7 +3549,7 @@ Lockfile:
     version "1.2.2"
     resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.2.2.tgz#03212e3da8d86c4d8523cebd6318193414f94e34"
   
-  micromatch@^2.1.5, micromatch@^2.3.7:
+  micromatch@^2.3.7:
     version "2.3.11"
     resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-2.3.11.tgz#86677c97d1720b363431d04d0d15293bd38c1565"
     dependencies:
@@ -3868,7 +3813,7 @@ Lockfile:
       semver "2 || 3 || 4 || 5"
       validate-npm-package-license "^3.0.1"
   
-  normalize-path@^2.0.0, normalize-path@^2.0.1, normalize-path@^2.1.1:
+  normalize-path@^2.0.1, normalize-path@^2.1.1:
     version "2.1.1"
     resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-2.1.1.tgz#1ab28b556e198363a8c1a6f7e6fa20137fe6aed9"
     dependencies:
@@ -4018,14 +3963,6 @@ Lockfile:
     dependencies:
       os-homedir "^1.0.0"
       os-tmpdir "^1.0.0"
-  
-  output-file-sync@^1.1.2:
-    version "1.1.2"
-    resolved "https://registry.yarnpkg.com/output-file-sync/-/output-file-sync-1.1.2.tgz#d0a33eefe61a205facb90092e826598d5245ce76"
-    dependencies:
-      graceful-fs "^4.1.4"
-      mkdirp "^0.5.1"
-      object-assign "^4.1.0"
   
   p-cancelable@^0.3.0:
     version "0.3.0"
@@ -4383,6 +4320,24 @@ Lockfile:
       ini "~1.3.0"
       minimist "^1.2.0"
       strip-json-comments "~2.0.1"
+  
+  react-dom@^16.4.0:
+    version "16.4.0"
+    resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.0.tgz#099f067dd5827ce36a29eaf9a6cdc7cbf6216b1e"
+    dependencies:
+      fbjs "^0.8.16"
+      loose-envify "^1.1.0"
+      object-assign "^4.1.1"
+      prop-types "^15.6.0"
+  
+  react@^16.4.0:
+    version "16.4.0"
+    resolved "https://registry.yarnpkg.com/react/-/react-16.4.0.tgz#402c2db83335336fba1962c08b98c6272617d585"
+    dependencies:
+      fbjs "^0.8.16"
+      loose-envify "^1.1.0"
+      object-assign "^4.1.1"
+      prop-types "^15.6.0"
   
   read-chunk@^2.1.0:
     version "2.1.0"
@@ -5237,10 +5192,6 @@ Lockfile:
     dependencies:
       kind-of "^6.0.2"
   
-  user-home@^1.1.1:
-    version "1.1.1"
-    resolved "https://registry.yarnpkg.com/user-home/-/user-home-1.1.1.tgz#2b5be23a32b63a7c9deb8d0f28d485724a3df190"
-  
   util-deprecate@~1.0.1:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
@@ -5254,12 +5205,6 @@ Lockfile:
   v8-compile-cache@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.0.0.tgz#526492e35fc616864284700b7043e01baee09f0a"
-  
-  v8flags@^2.1.1:
-    version "2.1.1"
-    resolved "https://registry.yarnpkg.com/v8flags/-/v8flags-2.1.1.tgz#aab1a1fa30d45f88dd321148875ac02c0b55e5b4"
-    dependencies:
-      user-home "^1.1.1"
   
   validate-npm-package-license@^3.0.1:
     version "3.0.3"
@@ -5543,7 +5488,7 @@ Trace:
   Error: Command failed.
   Exit code: 2
   Command: C:\Windows\system32\cmd.exe
-  Arguments: /d /s /c C:\cygwin64\home\1234\projectName\node_modules\.bin\flow
+  Arguments: /d /s /c webpack --mode=production --env.mode=production
   Directory: C:\cygwin64\home\1234\projectName
   Output:
   
