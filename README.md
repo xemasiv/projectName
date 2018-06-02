@@ -373,10 +373,22 @@ joi
 
 ## Enzyme
 
-## React
+## React [done]
 ```
 yarn add react react-dom
-yarn add babel-preset-react babel-plugin-transform-class-properties -D
+yarn add babel-preset-react
+babel-plugin-transform-class-properties -D
+
+// "react" @presets @.babelrc
+// "transform-class-properties" @plugins @.babelrc
+```
+
+## Express [done]
+```
+yarn add express
+yarn add webpack-node-externals -D
+
+// "./dist/server/main.js" @main @package.json
 ```
 
 ## React Router
@@ -396,11 +408,6 @@ babel-plugin-syntax-dynamic-import -D
 ```
 immutable
 ```
-
-## Babel Transforms
-
-* https://babeljs.io/docs/plugins/transform-do-expressions/
-* https://babeljs.io/docs/plugins/transform-function-bind/
 
 ## Reference Links
 * webpack env vars https://webpack.js.org/guides/environment-variables/

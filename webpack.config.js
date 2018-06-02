@@ -3,6 +3,7 @@
   no-console, no-unused-vars
 */
 const Uglify = require('uglifyjs-webpack-plugin');
+const NodeExternals = require('webpack-node-externals');
 
 const client = (env, argv) => {
   console.log('mode:', env.mode);
@@ -17,7 +18,11 @@ const client = (env, argv) => {
     },
     module: {
       rules: [
-        { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
+        {
+          test: /\.(js|jsx)$/,
+          use: 'babel-loader',
+          exclude: /node_modules/,
+        },
       ],
     },
     optimization: {
@@ -40,4 +45,31 @@ const client = (env, argv) => {
   };
 };
 
-module.exports = [client];
+const server = {
+  entry: [
+    './src/server/index.js',
+  ],
+  target: 'node',
+  node: {
+    __dirname: false,
+    __filename: false,
+  },
+  externals: [
+    NodeExternals(),
+  ],
+  output: {
+    path: `${__dirname}/dist/server`,
+    filename: 'main.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js)$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
+    ],
+  },
+};
+
+module.exports = [client, server];
