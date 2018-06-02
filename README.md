@@ -140,7 +140,7 @@ Web-app boilerplate that fits my needs.
 
 
   ```
-  yarn add babel-cli babel-loader babel-preset-env -D
+  yarn add babel-cli babel-loader babel-core babel-preset-env -D
   ```
 
 

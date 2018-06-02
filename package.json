@@ -24,9 +24,9 @@
     "webpack": "^4.10.2",
     "webpack-cli": "^2.1.4"
   },
-  "sideEffects": false,
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "whatwg-fetch": "^2.0.4"
-  }
+  },
+  "sideEffects": false
 }
