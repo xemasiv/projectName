@@ -4,8 +4,9 @@
   "main": "./dist/server/main.js",
   "license": "MIT",
   "scripts": {
-    "debug": "webpack --mode=development --env.mode=development --watch",
-    "build": "webpack --mode=production --env.mode=production"
+    "dev": "webpack --progress --mode=development --env.mode=development --watch",
+    "prod": "webpack --progress --mode=production --env.mode=production --watch",
+    "final": "yarn run rimraf dist && webpack --progress --mode=production --env.mode=production"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -23,6 +24,7 @@
     "eslint-plugin-react": "^7.4.0",
     "flow-bin": "^0.73.0",
     "nodemon": "^1.17.5",
+    "rimraf": "^2.6.2",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.10.2",
     "webpack-cli": "^2.1.4",
